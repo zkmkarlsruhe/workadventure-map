@@ -102,7 +102,7 @@
         {
          "columns":16,
          "firstgid":1,
-         "image":"tilesets_deviant_milkian_1.png",
+         "image":"tiles\/tilesets_deviant_milkian_1.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -890,7 +890,7 @@
         {
          "columns":8,
          "firstgid":257,
-         "image":"floortileset.png",
+         "image":"tiles\/floortileset.png",
          "imageheight":256,
          "imagewidth":256,
          "margin":0,
@@ -931,7 +931,7 @@
         {
          "columns":10,
          "firstgid":321,
-         "image":"zkm_logo_tileset.png",
+         "image":"tiles\/zkm_logo_tileset.png",
          "imageheight":160,
          "imagewidth":320,
          "margin":0,
