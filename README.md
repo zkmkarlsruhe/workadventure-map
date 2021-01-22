@@ -21,11 +21,64 @@ Some resources regarding Tiled:
 - [Tiled documentation](https://doc.mapeditor.org/en/stable/manual/introduction/)
 - [Tiled video tutorials](https://www.gamefromscratch.com/post/2015/10/14/Tiled-Map-Editor-Tutorial-Series.aspx)
 
+## Interactive layers
+
+You can trigger actions if players cross tiles on a specific layer. The actions are ste layer-wise, so even if your action is only on one tile it needs an individual layer.
+
+### Enter the map
+
+Create a layer named `start` with at least one tile. Users joining this map will be randomly placed on any tiles in this layer.
+
+### Exit the map
+
+_ToDo_
+
+### Open websites
+
+Use the following custom properties:
+
+* `openWebsite` (string) with the URL to the website
+* `openWebsiteTrigger` (string). If set to `onaction`, the website will not open automatically and the user will see something like 'Press space to open'.
+
+_Note_: Check if the website allows to be embedded. Website can forbid this using the `X-Frame-Options` header.
+
+#### Add a YouTube video
+
+Use the Youtube embed links. They look like this `youtube.com/embed/<video_id>`.
+
+### Play Audio
+
+Use **one** of the following properties:
+
+* `playAudio` (string)
+* `playAudioLoop` (string)
+
+Both strings hold an URL pointing to an MP3 file to play. The URL can be realtive to the map file, so you could organize your audio files in a subdirectory like `audio/`.
+
+### Join a Jitsi Meeting
+
+Use the following custom properties:
+
+* `jistiRoom` (string) the Jisti room name
+* `jitsiTrigger` (string). If set to `onaction`, the website will not open automatically and the user will see something like 'Press SPACE to enter'.
+
+_Note_: if your Jitsi server automatically mutes user on entering the room it can be offputing for users in this context since they will need to manually unmute themselves. To override this add `#config.startWithVideoMuted=false&config.startWithAudioMuted=false` after the room name.
+
+### Silent zones
+
+Users on the tiles of this layer will not engage in conversations if next to each others.
+
+Set the follwing custom layer property and activate it:
+
+* `silent` (bool)
+
 ## Create your own tiles
 
 Tiles are PNG images divided in a 32x32 pixel grid. It is not possible to use other grid sizes (e.g. 16x16). Check out the example tile files in the `public/tiles/` folders.
 
 # Deploy the map
+
+## With Gitlab Pages
 
 The `.gitlab-ci.yml` file in this repository automatically deploay the contents of `public/` after each push. The URL can be found under Settings -> Pages.
 
@@ -41,4 +94,4 @@ Open your map with `play.zkm.world/_/global/<link to the map.json>`, in this exa
 
 ## Videoconferences & Hosting
 
-[play.zkm.world](https://play.zkm.world) is hosted at the ZKM | Center for Art and Media. The Videoconferences are provided by [meet.zkm.de](https://meet.zkm.de).
+[play.zkm.world](https://play.zkm.world) is hosted at the [ZKM | Center for Art and Media](https://zkm.de). The videoconferences are provided by [meet.zkm.de](https://meet.zkm.de).
